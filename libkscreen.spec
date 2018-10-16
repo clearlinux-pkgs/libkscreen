@@ -6,7 +6,7 @@
 #
 Name     : libkscreen
 Version  : 5.14.1
-Release  : 4
+Release  : 5
 URL      : https://download.kde.org/stable/plasma/5.14.1/libkscreen-5.14.1.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.14.1/libkscreen-5.14.1.tar.xz
 Source99 : https://download.kde.org/stable/plasma/5.14.1/libkscreen-5.14.1.tar.xz.sig
@@ -22,6 +22,7 @@ BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules pkgconfig(xcb) xcb-util-cursor-dev xcb-util-image-dev xcb-util-keysyms-dev xcb-util-renderutil-dev xcb-util-wm-dev xcb-util-dev
 BuildRequires : kwayland-dev
 BuildRequires : qtbase-dev mesa-dev
+BuildRequires : qtx11extras-dev
 
 %description
 # Design of libkscreen's Wayland backend
@@ -84,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1539703296
+export SOURCE_DATE_EPOCH=1539705039
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -92,7 +93,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1539703296
+export SOURCE_DATE_EPOCH=1539705039
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp COPYING %{buildroot}/usr/share/package-licenses/libkscreen/COPYING
