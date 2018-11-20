@@ -6,7 +6,7 @@
 #
 Name     : libkscreen
 Version  : 5.14.3
-Release  : 7
+Release  : 8
 URL      : https://download.kde.org/stable/plasma/5.14.3/libkscreen-5.14.3.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.14.3/libkscreen-5.14.3.tar.xz
 Source99 : https://download.kde.org/stable/plasma/5.14.3/libkscreen-5.14.3.tar.xz.sig
@@ -22,19 +22,12 @@ BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules pkgconfig(xcb) xcb-util-cursor-dev xcb-util-image-dev xcb-util-keysyms-dev xcb-util-renderutil-dev xcb-util-wm-dev xcb-util-dev
 BuildRequires : kwayland-dev
 BuildRequires : qtbase-dev mesa-dev
+BuildRequires : qtx11extras-dev
 
 %description
 # Design of libkscreen's Wayland backend
 This backend uses KWayland's OutputManagement protocol for listing and
 configuring devices. This is described here.
-
-%package abi
-Summary: abi components for the libkscreen package.
-Group: Default
-
-%description abi
-abi components for the libkscreen package.
-
 
 %package bin
 Summary: bin components for the libkscreen package.
@@ -92,7 +85,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541533361
+export SOURCE_DATE_EPOCH=1542747520
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -100,7 +93,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1541533361
+export SOURCE_DATE_EPOCH=1542747520
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp COPYING %{buildroot}/usr/share/package-licenses/libkscreen/COPYING
@@ -112,11 +105,6 @@ popd
 %files
 %defattr(-,root,root,-)
 /usr/lib64/libexec/kf5/kscreen_backend_launcher
-
-%files abi
-%defattr(-,root,root,-)
-/usr/share/abi/libKF5Screen.so.5.14.3.abi
-/usr/share/abi/libKF5Screen.so.7.abi
 
 %files bin
 %defattr(-,root,root,-)
