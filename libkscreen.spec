@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.14.4
-Release  : 9
-URL      : https://download.kde.org/stable/plasma/5.14.4/libkscreen-5.14.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.14.4/libkscreen-5.14.4.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.14.4/libkscreen-5.14.4.tar.xz.sig
-Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
+Version  : 5.14.5
+Release  : 10
+URL      : https://download.kde.org/stable/plasma/5.14.5/libkscreen-5.14.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.14.5/libkscreen-5.14.5.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.14.5/libkscreen-5.14.5.tar.xz.sig
+Summary  : KDE screen management software
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: libkscreen-bin = %{version}-%{release}
@@ -77,22 +77,22 @@ license components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.14.4
+%setup -q -n libkscreen-5.14.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543394637
+export SOURCE_DATE_EPOCH=1546966908
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1543394637
+export SOURCE_DATE_EPOCH=1546966908
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp COPYING %{buildroot}/usr/share/package-licenses/libkscreen/COPYING
@@ -150,7 +150,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.14.4
+/usr/lib64/libKF5Screen.so.5.14.5
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
