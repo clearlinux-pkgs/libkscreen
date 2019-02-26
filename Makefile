@@ -1,5 +1,5 @@
 PKG_NAME := libkscreen
-URL = https://download.kde.org/stable/plasma/5.15.1/libkscreen-5.15.1.tar.xz
+URL = https://download.kde.org/stable/plasma/5.15.2/libkscreen-5.15.2.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
