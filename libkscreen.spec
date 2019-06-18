@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.16.0
-Release  : 20
-URL      : https://download.kde.org/stable/plasma/5.16.0/libkscreen-5.16.0.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.0/libkscreen-5.16.0.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.16.0/libkscreen-5.16.0.tar.xz.sig
+Version  : 5.16.1
+Release  : 21
+URL      : https://download.kde.org/stable/plasma/5.16.1/libkscreen-5.16.1.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.16.1/libkscreen-5.16.1.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.16.1/libkscreen-5.16.1.tar.xz.sig
 Summary  : KDE screen management software
 Group    : Development/Tools
 License  : GPL-2.0
@@ -79,16 +79,17 @@ license components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.16.0
+%setup -q -n libkscreen-5.16.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1560270800
+export SOURCE_DATE_EPOCH=1560865842
 mkdir -p clr-build
 pushd clr-build
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -101,7 +102,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1560270800
+export SOURCE_DATE_EPOCH=1560865842
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp COPYING %{buildroot}/usr/share/package-licenses/libkscreen/COPYING
@@ -160,7 +161,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.16.0
+/usr/lib64/libKF5Screen.so.5.16.1
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
