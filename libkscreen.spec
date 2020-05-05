@@ -5,12 +5,12 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.18.4.1
-Release  : 36
-URL      : https://download.kde.org/stable/plasma/5.18.4/libkscreen-5.18.4.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.4/libkscreen-5.18.4.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.4/libkscreen-5.18.4.1.tar.xz.sig
-Summary  : KDE screen management software
+Version  : 5.18.5
+Release  : 37
+URL      : https://download.kde.org/stable/plasma/5.18.5/libkscreen-5.18.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.18.5/libkscreen-5.18.5.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.18.5/libkscreen-5.18.5.tar.xz.sig
+Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: libkscreen-bin = %{version}-%{release}
@@ -20,6 +20,7 @@ Requires: libkscreen-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : extra-cmake-modules pkgconfig(xcb) xcb-util-cursor-dev xcb-util-image-dev xcb-util-keysyms-dev xcb-util-renderutil-dev xcb-util-wm-dev xcb-util-dev
+BuildRequires : extra-cmake-modules-data
 BuildRequires : kwayland-dev
 BuildRequires : qtbase-dev mesa-dev
 
@@ -53,7 +54,6 @@ Requires: libkscreen-bin = %{version}-%{release}
 Requires: libkscreen-data = %{version}-%{release}
 Provides: libkscreen-devel = %{version}-%{release}
 Requires: libkscreen = %{version}-%{release}
-Requires: libkscreen = %{version}-%{release}
 
 %description dev
 dev components for the libkscreen package.
@@ -78,36 +78,35 @@ license components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.18.4.1
-cd %{_builddir}/libkscreen-5.18.4.1
+%setup -q -n libkscreen-5.18.5
+cd %{_builddir}/libkscreen-5.18.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585680142
+export SOURCE_DATE_EPOCH=1588703467
 mkdir -p clr-build
 pushd clr-build
-# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
 make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1585680142
+export SOURCE_DATE_EPOCH=1588703467
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
-cp %{_builddir}/libkscreen-5.18.4.1/COPYING %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/libkscreen-5.18.4.1/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/libkscreen-5.18.5/COPYING %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/libkscreen-5.18.5/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
 pushd clr-build
 %make_install
 popd
@@ -162,7 +161,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.18.4
+/usr/lib64/libKF5Screen.so.5.18.5
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
