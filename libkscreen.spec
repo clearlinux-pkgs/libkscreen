@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.21.4
-Release  : 48
-URL      : https://download.kde.org/stable/plasma/5.21.4/libkscreen-5.21.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.21.4/libkscreen-5.21.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.21.4/libkscreen-5.21.4.tar.xz.sig
+Version  : 5.22.0
+Release  : 49
+URL      : https://download.kde.org/stable/plasma/5.22.0/libkscreen-5.22.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.22.0/libkscreen-5.22.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.22.0/libkscreen-5.22.0.tar.xz.sig
 Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
 Group    : Development/Tools
-License  : GPL-2.0
+License  : GPL-2.0 GPL-3.0 LGPL-2.1
 Requires: libkscreen-bin = %{version}-%{release}
 Requires: libkscreen-data = %{version}-%{release}
 Requires: libkscreen-lib = %{version}-%{release}
@@ -78,15 +78,15 @@ license components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.21.4
-cd %{_builddir}/libkscreen-5.21.4
+%setup -q -n libkscreen-5.22.0
+cd %{_builddir}/libkscreen-5.22.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618666041
+export SOURCE_DATE_EPOCH=1623308160
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -102,11 +102,14 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1618666041
+export SOURCE_DATE_EPOCH=1623308160
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
-cp %{_builddir}/libkscreen-5.21.4/COPYING %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
-cp %{_builddir}/libkscreen-5.21.4/COPYING.LIB %{buildroot}/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/libkscreen-5.22.0/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/libkscreen-5.22.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/libkscreen-5.22.0/LICENSES/LGPL-2.1-or-later.txt %{buildroot}/usr/share/package-licenses/libkscreen/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+cp %{_builddir}/libkscreen-5.22.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/libkscreen/7d9831e05094ce723947d729c2a46a09d6e90275
+cp %{_builddir}/libkscreen-5.22.0/LICENSES/LicenseRef-KDE-Accepted-GPL.txt %{buildroot}/usr/share/package-licenses/libkscreen/7d9831e05094ce723947d729c2a46a09d6e90275
 pushd clr-build
 %make_install
 popd
@@ -161,7 +164,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.21.4
+/usr/lib64/libKF5Screen.so.5.22.0
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
@@ -171,4 +174,6 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/libkscreen/4cc77b90af91e615a64ae04893fdffa7939db84c
+/usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+/usr/share/package-licenses/libkscreen/7d9831e05094ce723947d729c2a46a09d6e90275
+/usr/share/package-licenses/libkscreen/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
