@@ -139,6 +139,7 @@ libKF5Screen.so.7:_ZN7KScreen6Output10setPrimaryEb
 libKF5Screen.so.7:_ZN7KScreen6Output11qt_metacallEN11QMetaObject4CallEiPPv
 libKF5Screen.so.7:_ZN7KScreen6Output11qt_metacastEPKc
 libKF5Screen.so.7:_ZN7KScreen6Output11setOverscanEj
+libKF5Screen.so.7:_ZN7KScreen6Output11setRgbRangeENS0_8RgbRangeE
 libKF5Screen.so.7:_ZN7KScreen6Output11setRotationENS0_8RotationE
 libKF5Screen.so.7:_ZN7KScreen6Output11sizeChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output12modesChangedEv
@@ -148,7 +149,8 @@ libKF5Screen.so.7:_ZN7KScreen6Output12setVrrPolicyENS0_9VrrPolicyE
 libKF5Screen.so.7:_ZN7KScreen6Output13clonesChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output13outputChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output14setLogicalSizeERK6QSizeF
-libKF5Screen.so.7:_ZN7KScreen6Output15overscanChangedEj
+libKF5Screen.so.7:_ZN7KScreen6Output15overscanChangedEv
+libKF5Screen.so.7:_ZN7KScreen6Output15rgbRangeChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output15rotationChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output15setCapabilitiesE6QFlagsINS0_10CapabilityEE
 libKF5Screen.so.7:_ZN7KScreen6Output16isEnabledChangedEv
@@ -158,7 +160,7 @@ libKF5Screen.so.7:_ZN7KScreen6Output16vrrPolicyChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output17setPreferredModesERK11QStringList
 libKF5Screen.so.7:_ZN7KScreen6Output18isConnectedChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output18logicalSizeChangedEv
-libKF5Screen.so.7:_ZN7KScreen6Output19capabilitiesChangedE6QFlagsINS0_10CapabilityEE
+libKF5Screen.so.7:_ZN7KScreen6Output19capabilitiesChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output20currentModeIdChangedEv
 libKF5Screen.so.7:_ZN7KScreen6Output20setReplicationSourceEi
 libKF5Screen.so.7:_ZN7KScreen6Output22setFollowPreferredModeEb
@@ -281,6 +283,7 @@ libKF5Screen.so.7:_ZNK7KScreen6Output6sizeMmEv
 libKF5Screen.so.7:_ZNK7KScreen6Output7hashMd5Ev
 libKF5Screen.so.7:_ZNK7KScreen6Output8geometryEv
 libKF5Screen.so.7:_ZNK7KScreen6Output8overscanEv
+libKF5Screen.so.7:_ZNK7KScreen6Output8rgbRangeEv
 libKF5Screen.so.7:_ZNK7KScreen6Output8rotationEv
 libKF5Screen.so.7:_ZNK7KScreen6Output9isEnabledEv
 libKF5Screen.so.7:_ZNK7KScreen6Output9isPrimaryEv
