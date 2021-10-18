@@ -4,7 +4,7 @@
 #
 Name     : libkscreen
 Version  : 5.23.0
-Release  : 52
+Release  : 53
 URL      : https://download.kde.org/stable/plasma/5.23.0/libkscreen-5.23.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.23.0/libkscreen-5.23.0.tar.xz
 Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
