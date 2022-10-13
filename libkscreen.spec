@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.25.5
-Release  : 70
-URL      : https://download.kde.org/stable/plasma/5.25.5/libkscreen-5.25.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.25.5/libkscreen-5.25.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.25.5/libkscreen-5.25.5.tar.xz.sig
+Version  : 5.26.0
+Release  : 71
+URL      : https://download.kde.org/stable/plasma/5.26.0/libkscreen-5.26.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.0/libkscreen-5.26.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.0/libkscreen-5.26.0.tar.xz.sig
 Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
 Group    : Development/Tools
-License  : GPL-2.0 GPL-3.0 LGPL-2.1
+License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1
 Requires: libkscreen-bin = %{version}-%{release}
 Requires: libkscreen-data = %{version}-%{release}
 Requires: libkscreen-lib = %{version}-%{release}
@@ -25,6 +25,7 @@ BuildRequires : extra-cmake-modules pkgconfig(xcb) xcb-util-cursor-dev xcb-util-
 BuildRequires : extra-cmake-modules qtwayland-dev
 BuildRequires : extra-cmake-modules wayland
 BuildRequires : extra-cmake-modules-data
+BuildRequires : kconfig-dev
 BuildRequires : kwayland-dev
 BuildRequires : plasma-wayland-protocols-dev
 BuildRequires : qtbase-dev mesa-dev
@@ -92,15 +93,15 @@ services components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.25.5
-cd %{_builddir}/libkscreen-5.25.5
+%setup -q -n libkscreen-5.26.0
+cd %{_builddir}/libkscreen-5.26.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1662499713
+export SOURCE_DATE_EPOCH=1665704539
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -116,9 +117,10 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1662499713
+export SOURCE_DATE_EPOCH=1665704539
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
+cp %{_builddir}/libkscreen-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/libkscreen/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
 cp %{_builddir}/libkscreen-%{version}/LICENSES/GPL-2.0-only.txt %{buildroot}/usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46 || :
 cp %{_builddir}/libkscreen-%{version}/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46 || :
 cp %{_builddir}/libkscreen-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/libkscreen/2123756e0b1fc8243547235a33c0fcabfe3b9a51 || :
@@ -179,7 +181,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.25.5
+/usr/lib64/libKF5Screen.so.5.26.0
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
@@ -193,6 +195,7 @@ popd
 /usr/share/package-licenses/libkscreen/3e8971c6c5f16674958913a94a36b1ea7a00ac46
 /usr/share/package-licenses/libkscreen/7d9831e05094ce723947d729c2a46a09d6e90275
 /usr/share/package-licenses/libkscreen/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+/usr/share/package-licenses/libkscreen/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0
 
 %files services
 %defattr(-,root,root,-)
