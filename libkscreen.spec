@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.26.3
-Release  : 74
-URL      : https://download.kde.org/stable/plasma/5.26.3/libkscreen-5.26.3.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.26.3/libkscreen-5.26.3.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.26.3/libkscreen-5.26.3.tar.xz.sig
+Version  : 5.26.4
+Release  : 75
+URL      : https://download.kde.org/stable/plasma/5.26.4/libkscreen-5.26.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.26.4/libkscreen-5.26.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.26.4/libkscreen-5.26.4.tar.xz.sig
 Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1
@@ -93,15 +93,15 @@ services components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.26.3
-cd %{_builddir}/libkscreen-5.26.3
+%setup -q -n libkscreen-5.26.4
+cd %{_builddir}/libkscreen-5.26.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1667935196
+export SOURCE_DATE_EPOCH=1669813135
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -117,7 +117,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1667935196
+export SOURCE_DATE_EPOCH=1669813135
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp %{_builddir}/libkscreen-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/libkscreen/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -144,13 +144,17 @@ popd
 /usr/share/dbus-1/services/org.kde.kscreen.service
 /usr/share/locale/ca/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/ca@valencia/LC_MESSAGES/libkscreen5_qt.qm
+/usr/share/locale/en_GB/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/es/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/eu/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/fr/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/it/LC_MESSAGES/libkscreen5_qt.qm
+/usr/share/locale/ka/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/nl/LC_MESSAGES/libkscreen5_qt.qm
+/usr/share/locale/pl/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/ru/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/sl/LC_MESSAGES/libkscreen5_qt.qm
+/usr/share/locale/sv/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/tr/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/uk/LC_MESSAGES/libkscreen5_qt.qm
 /usr/share/locale/zh_CN/LC_MESSAGES/libkscreen5_qt.qm
@@ -193,7 +197,7 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/libKF5Screen.so.5.26.3
+/usr/lib64/libKF5Screen.so.5.26.4
 /usr/lib64/libKF5Screen.so.7
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
