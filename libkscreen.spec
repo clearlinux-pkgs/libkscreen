@@ -6,7 +6,7 @@
 #
 Name     : libkscreen
 Version  : 5.27.0
-Release  : 77
+Release  : 78
 URL      : https://download.kde.org/stable/plasma/5.27.0/libkscreen-5.27.0.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.27.0/libkscreen-5.27.0.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.27.0/libkscreen-5.27.0.tar.xz.sig
