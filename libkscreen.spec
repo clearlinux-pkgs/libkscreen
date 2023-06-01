@@ -7,7 +7,7 @@
 #
 Name     : libkscreen
 Version  : 5.27.5
-Release  : 84
+Release  : 85
 URL      : https://download.kde.org/stable/plasma/5.27.5/libkscreen-5.27.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.27.5/libkscreen-5.27.5.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.27.5/libkscreen-5.27.5.tar.xz.sig
@@ -106,7 +106,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684775799
+export SOURCE_DATE_EPOCH=1685642443
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -139,7 +139,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1684775799
+export SOURCE_DATE_EPOCH=1685642443
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp %{_builddir}/libkscreen-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/libkscreen/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -201,8 +201,6 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Screen.so
-/V3/usr/lib64/libKF5ScreenDpms.so
 /usr/include/KF5/KScreen/KScreen/Config
 /usr/include/KF5/KScreen/KScreen/ConfigMonitor
 /usr/include/KF5/KScreen/KScreen/ConfigOperation
@@ -243,9 +241,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /V3/usr/lib64/libKF5Screen.so.5.27.5
-/V3/usr/lib64/libKF5Screen.so.8
 /V3/usr/lib64/libKF5ScreenDpms.so.5.27.5
-/V3/usr/lib64/libKF5ScreenDpms.so.8
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_QScreen.so
