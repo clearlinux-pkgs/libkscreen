@@ -6,11 +6,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : libkscreen
-Version  : 5.27.7
-Release  : 87
-URL      : https://download.kde.org/stable/plasma/5.27.7/libkscreen-5.27.7.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.27.7/libkscreen-5.27.7.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.27.7/libkscreen-5.27.7.tar.xz.sig
+Version  : 5.27.8
+Release  : 88
+URL      : https://download.kde.org/stable/plasma/5.27.8/libkscreen-5.27.8.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.27.8/libkscreen-5.27.8.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.27.8/libkscreen-5.27.8.tar.xz.sig
 Summary  : Qt Based library to manage screens with backends (xrandr, whatevercomesnext)
 Group    : Development/Tools
 License  : CC0-1.0 GPL-2.0 GPL-3.0 LGPL-2.1
@@ -98,15 +98,15 @@ services components for the libkscreen package.
 
 
 %prep
-%setup -q -n libkscreen-5.27.7
-cd %{_builddir}/libkscreen-5.27.7
+%setup -q -n libkscreen-5.27.8
+cd %{_builddir}/libkscreen-5.27.8
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1690904069
+export SOURCE_DATE_EPOCH=1694546947
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -139,7 +139,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1690904069
+export SOURCE_DATE_EPOCH=1694546947
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libkscreen
 cp %{_builddir}/libkscreen-%{version}/LICENSES/CC0-1.0.txt %{buildroot}/usr/share/package-licenses/libkscreen/82da472f6d00dc5f0a651f33ebb320aa9c7b08d0 || :
@@ -242,16 +242,16 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libKF5Screen.so.5.27.7
-/V3/usr/lib64/libKF5ScreenDpms.so.5.27.7
+/V3/usr/lib64/libKF5Screen.so.5.27.8
+/V3/usr/lib64/libKF5ScreenDpms.so.5.27.8
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_QScreen.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_XRandR.so
 /V3/usr/lib64/qt5/plugins/kf5/kscreen/KSC_XRandR11.so
-/usr/lib64/libKF5Screen.so.5.27.7
+/usr/lib64/libKF5Screen.so.5.27.8
 /usr/lib64/libKF5Screen.so.8
-/usr/lib64/libKF5ScreenDpms.so.5.27.7
+/usr/lib64/libKF5ScreenDpms.so.5.27.8
 /usr/lib64/libKF5ScreenDpms.so.8
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_Fake.so
 /usr/lib64/qt5/plugins/kf5/kscreen/KSC_KWayland.so
