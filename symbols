@@ -154,6 +154,7 @@ libKF6Screen.so.8:_ZN7KScreen6Output12setConnectedEb
 libKF6Screen.so.8:_ZN7KScreen6Output12setVrrPolicyENS0_9VrrPolicyE
 libKF6Screen.so.8:_ZN7KScreen6Output13clonesChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output13outputChangedEv
+libKF6Screen.so.8:_ZN7KScreen6Output13setBrightnessEd
 libKF6Screen.so.8:_ZN7KScreen6Output13setHdrEnabledEb
 libKF6Screen.so.8:_ZN7KScreen6Output13setWcgEnabledEb
 libKF6Screen.so.8:_ZN7KScreen6Output15overscanChangedEv
@@ -166,6 +167,7 @@ libKF6Screen.so.8:_ZN7KScreen6Output16setCurrentModeIdERK7QString
 libKF6Screen.so.8:_ZN7KScreen6Output16setMinBrightnessEd
 libKF6Screen.so.8:_ZN7KScreen6Output16setSdrBrightnessEj
 libKF6Screen.so.8:_ZN7KScreen6Output16vrrPolicyChangedEv
+libKF6Screen.so.8:_ZN7KScreen6Output17brightnessChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output17hdrEnabledChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output17setIccProfilePathERK7QString
 libKF6Screen.so.8:_ZN7KScreen6Output17setPreferredModesERK5QListI7QStringE
@@ -180,6 +182,7 @@ libKF6Screen.so.8:_ZN7KScreen6Output20sdrBrightnessChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output20setMaxPeakBrightnessEd
 libKF6Screen.so.8:_ZN7KScreen6Output20setReplicationSourceEi
 libKF6Screen.so.8:_ZN7KScreen6Output21iccProfilePathChangedEv
+libKF6Screen.so.8:_ZN7KScreen6Output21setColorProfileSourceENS0_18ColorProfileSourceE
 libKF6Screen.so.8:_ZN7KScreen6Output22setExplicitLogicalSizeERK6QSizeF
 libKF6Screen.so.8:_ZN7KScreen6Output22setFollowPreferredModeEb
 libKF6Screen.so.8:_ZN7KScreen6Output23autoRotatePolicyChangedEv
@@ -188,6 +191,7 @@ libKF6Screen.so.8:_ZN7KScreen6Output23setMaxAverageBrightnessEd
 libKF6Screen.so.8:_ZN7KScreen6Output24maxPeakBrightnessChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output24replicationSourceChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output24setMinBrightnessOverrideESt8optionalIdE
+libKF6Screen.so.8:_ZN7KScreen6Output25colorProfileSourceChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output26explicitLogicalSizeChangedEv
 libKF6Screen.so.8:_ZN7KScreen6Output26followPreferredModeChangedEb
 libKF6Screen.so.8:_ZN7KScreen6Output27maxAverageBrightnessChangedEv
@@ -285,6 +289,7 @@ libKF6Screen.so.8:_ZNK7KScreen6Config6outputEi
 libKF6Screen.so.8:_ZNK7KScreen6Config6screenEv
 libKF6Screen.so.8:_ZNK7KScreen6Config7isValidEv
 libKF6Screen.so.8:_ZNK7KScreen6Config7outputsEv
+libKF6Screen.so.8:_ZNK7KScreen6Output10brightnessEv
 libKF6Screen.so.8:_ZNK7KScreen6Output10metaObjectEv
 libKF6Screen.so.8:_ZNK7KScreen6Output11currentModeEv
 libKF6Screen.so.8:_ZNK7KScreen6Output11isConnectedEv
@@ -304,6 +309,7 @@ libKF6Screen.so.8:_ZNK7KScreen6Output16enforcedModeSizeEv
 libKF6Screen.so.8:_ZNK7KScreen6Output16sdrGamutWidenessEv
 libKF6Screen.so.8:_ZNK7KScreen6Output17maxPeakBrightnessEv
 libKF6Screen.so.8:_ZNK7KScreen6Output17replicationSourceEv
+libKF6Screen.so.8:_ZNK7KScreen6Output18colorProfileSourceEv
 libKF6Screen.so.8:_ZNK7KScreen6Output19explicitLogicalSizeEv
 libKF6Screen.so.8:_ZNK7KScreen6Output19followPreferredModeEv
 libKF6Screen.so.8:_ZNK7KScreen6Output20maxAverageBrightnessEv
