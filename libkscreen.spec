@@ -9,7 +9,7 @@
 #
 Name     : libkscreen
 Version  : 6.2.5
-Release  : 111
+Release  : 112
 URL      : https://download.kde.org/stable/plasma/6.2.5/libkscreen-6.2.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/6.2.5/libkscreen-6.2.5.tar.xz
 Source1  : https://download.kde.org/stable/plasma/6.2.5/libkscreen-6.2.5.tar.xz.sig
